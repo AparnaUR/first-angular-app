@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+.container
+{
+    margin: 68px -15px 0px 53px ;
+}
+footer{
+    background-color: rgb(212, 203, 203);
+    text-align: center;
+}
+img{
+    height: 329px;
+
+}
