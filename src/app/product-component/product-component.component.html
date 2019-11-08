@@ -1,14 +1,7 @@
 <div class="container">
         <div class="row" >
-          <div  *ngFor="let item of prod">
-            <div class="card" *ngIf="item.isAvailable"style="width: 18rem;">
-              <img [src]="item.image" class="card-img-top" [alt]="item.imageAlt">
-                <div class="card-body">
-                  <h5 class="card-title">{{item.name | uppercase }}</h5>
-                    <p class="card-text">{{item.description}}</p>
-                        <button href="#" class="btn btn-primary">Search</button>
-                </div>
-            </div>
+          <div *ngFor="let item of prod">
+           <app-product-description  [item]='item'></app-product-description>
           </div>
         </div>
 </div>

@@ -1,0 +1,10 @@
+<div class=container>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">         
+          <input type="text" formControlName="name" placeholder="Item Name"><br><br>
+          <input type="text" formControlName="description" placeholder="Item Description"><br><br>
+          <input type="text" formControlName="price" placeholder="Item Price"><br><br>
+          <input type="text" formControlName="image" placeholder="Image URL"><br><br>
+          Is Product Available<input type="checkbox" formControlName="isAvailable" ><br><br>
+          <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
