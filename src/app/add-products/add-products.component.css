@@ -1,5 +1,18 @@
 form
 {
 margin-top: 60px;
-margin-left:20px
+margin-left:20px;
 }
+input[type=text], textarea
+  {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 3px solid rgb(253, 179, 179);
+    border-radius: 4px;
+    box-sizing: border-box;
+    color:rgb(151, 25, 25);
+      
+  }
+ 

@@ -7,7 +7,7 @@ import { Product } from '../Model/products';
 export class ProductService {
 
   constructor() { }
-  prod: Array<Product> =[
+  private prod: Array<Product> = [
   {name: 'Bouquet',
   image: 'https://rukminim1.flixcart.com/image/612/612/k0o69ow0/artificial-flower/r/p/j/ysk021007-ysk-creation-original-imafjxbavrvanvjn.jpeg?q=70',
   description: 'Amazing Bouquet available at lower prices',
@@ -43,7 +43,7 @@ export class ProductService {
   isAvailable: false,
   price: 1050
   },
-  {name: 'Bouquet',
+  {name: 'Flower Vase',
   image: 'https://rukminim1.flixcart.com/image/612/612/k0lbdzk0/artificial-flower/y/k/k/ysk021018-ysk-creation-original-imafjyagq97gh9fs.jpeg?q=70',
   description: 'Amazing Bouquet available at lower prices.',
   imageAlt: 'image not found',
@@ -57,14 +57,14 @@ export class ProductService {
   isAvailable: true,
   price: 1200
   },
-  {name: 'Bouquet',
+  {name: 'Small Gift Bouquet',
   image: 'https://rukminim1.flixcart.com/image/612/612/jrqo70w0/artificial-flower/y/x/n/jc02828-jaipurcrafts-original-imafdej6drkxfxqy.jpeg?q=70',
   description: 'Amazing Bouquet available at lower prices',
   imageAlt: 'image not found',
   isAvailable: true,
   price: 1400
   },
-  {name: 'Bouquet',
+  {name: 'Red Rose Bouquet',
   image: 'https://rukminim1.flixcart.com/image/612/612/js3j5ow0/artificial-flower/z/h/k/rose-artificial-flower-stick-rose-flower-bunch-bouquet-of-18-original-imafd7qubtxzwrhq.jpeg?q=70',
   description: 'Artificial rose bunch with 18 red roses',
   imageAlt: 'image not found',
@@ -73,5 +73,8 @@ export class ProductService {
   }];
   getProducts() {
     return this.prod;
+  }
+  addProducts(data) {
+  this.prod.push(data);
   }
 }

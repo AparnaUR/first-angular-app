@@ -3,9 +3,11 @@
     <div class="card" *ngIf="item.isAvailable" style="width: 18rem;">
         <a routerLink="/description/:id"><img [src]="item.image" class="card-img-top" [alt]="item.imageAlt"></a>
           <div class="card-body">
-            <h5 class="card-title">{{item.name | uppercase }}</h5>
+            <h5 class="card-title">{{item.name}}</h5>
               <p class="card-text">{{item.description}}</p>
-                  <button  class="btn btn-primary">Search</button>
+              <p class="card-text">${{item.price}}</p>
+
+                  <button  class="btn btn-primary">Add To Cart</button>
           </div>
 </div>
 </div>
