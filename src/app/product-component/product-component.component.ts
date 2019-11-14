@@ -18,5 +18,8 @@ export class ProductComponentComponent implements OnInit {
   ngOnInit() {
     this.getProd();
   }
+  deleted(event) {
+    this.getProd();
+  }
 
 }

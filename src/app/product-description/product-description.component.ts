@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../Model/products';
-
+import { ProductService } from '../services/product.service';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-product-description',
@@ -9,9 +10,15 @@ import { Product } from '../Model/products';
 })
 export class ProductDescriptionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private productService: ProductService) { }
   @Input() item: Product;
+  @Output() isDeleted = new EventEmitter<boolean>();
   ngOnInit() {
   }
-
+  delete(id) {
+  this.productService.deleteProduct(id).subscribe(data => {
+    alert( 'Product deleted successfully');
+    this.isDeleted.emit();
+  });
+}
 }

@@ -2,6 +2,7 @@ import { Component, OnInit, OnChanges, DoCheck, AfterContentInit, AfterViewCheck
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ProductService } from '../services/product.service';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-products',
@@ -12,7 +13,7 @@ export class AddProductsComponent implements OnInit {
   myForm: FormGroup;
   id: number;
   private formData: any;
-  constructor(private productService: ProductService, private route: ActivatedRoute) { }
+  constructor(private productService: ProductService, private route: ActivatedRoute, private router: Router) { }
   ngOnInit() {
     this.myForm = new FormGroup({
       title: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
@@ -23,6 +24,7 @@ export class AddProductsComponent implements OnInit {
     });
     this.route.params.subscribe(params => {
       this.id = +params['id'];
+      if (this.id) {
       this.productService.filterProducts(this.id).subscribe(data => {
         this.formData = data;
         this.myForm.patchValue({
@@ -33,17 +35,20 @@ export class AddProductsComponent implements OnInit {
           isAvailable: this.formData.isAvailable
         });
       });
+    }
     });
   }
   onSubmit(data) {
     console.log(data);
     if (this.id) {
       this.productService.updateProducts(this.myForm.value, this.id).subscribe(parameter => {
-        console.log(parameter);
+        alert( 'Product updated successfully');
+        this.router.navigate(['']);
       });
     } else {
       this.productService.addProducts(this.myForm.value).subscribe(parameter => {
-        console.log(parameter);
+        alert( 'Product added successfully');
+        this.router.navigate(['']);
       });
     }
 

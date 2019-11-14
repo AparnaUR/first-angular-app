@@ -85,4 +85,7 @@ export class ProductService {
   updateProducts(data,id) {
     return this.http.put('http://localhost:3000/product/' + id, data); // observable
   }
+  deleteProduct(id) {
+    return this.http.delete('http://localhost:3000/product/' + id);
+  }
 }
