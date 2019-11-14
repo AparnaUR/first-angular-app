@@ -8,6 +8,7 @@ import { Product } from '../Model/products';
 })
 export class ProductComponentComponent implements OnInit {
   prod: any;
+  count = 0;
   constructor(private productService: ProductService) { }
   getProd(): void {
     this.productService.getProducts().subscribe(response => {
@@ -20,6 +21,10 @@ export class ProductComponentComponent implements OnInit {
   }
   deleted(event) {
     this.getProd();
+  }
+  increment(event) {
+    this.count++;
+    console.log(this.count);
   }
 
 }

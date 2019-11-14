@@ -10,9 +10,11 @@ import { from } from 'rxjs';
 })
 export class ProductDescriptionComponent implements OnInit {
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService) {}
   @Input() item: Product;
   @Output() isDeleted = new EventEmitter<boolean>();
+  @Output() isIncremented = new EventEmitter<boolean>();
+  count = 0;
   ngOnInit() {
   }
   delete(id) {
@@ -20,5 +22,8 @@ export class ProductDescriptionComponent implements OnInit {
     alert( 'Product deleted successfully');
     this.isDeleted.emit();
   });
+}
+increment() {
+  this.isIncremented.emit();
 }
 }

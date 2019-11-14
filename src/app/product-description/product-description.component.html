@@ -7,7 +7,7 @@
               <p class="card-text">{{item.description}}</p>
               <p class="card-text">${{item.price}}</p>
 
-                  <button  class="btn btn-primary">Add To Cart</button>
+                  <button  class="btn btn-primary" (click)="increment()">Add To Cart</button>
                   <button  class="btn btn-secondary" [routerLink]="['add-product', item.id]">Edit</button>
                   <button  class="btn btn-secondary" (click)="delete(item.id)" >Delete</button>
           </div>

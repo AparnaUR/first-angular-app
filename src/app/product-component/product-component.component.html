@@ -1,7 +1,12 @@
 <div class="container">
+    Cart item count<input type="text" value=">{{count}}">
         <div class="row" >
           <div *ngFor="let item of prod">
-           <app-product-description  [item]='item' (isDeleted)=deleted($event)></app-product-description>
+           <app-product-description  [item]='item' (isDeleted)=deleted($event) (isIncremented)=increment($event)>
+              
+           </app-product-description>
           </div>
+         
         </div>
+        
 </div>
