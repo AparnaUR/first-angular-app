@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -14,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 const appRoutes: Routes = [
   { path: '', component: ProductComponentComponent },
   { path: 'add-product',  component: AddProductsComponent },
+  { path: 'add-product/:id',  component: AddProductsComponent },
   { path: 'description/:id', component: ProductDescriptionComponent },
   { path: '**', redirectTo: '' }
 ];
@@ -29,6 +31,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot(
       appRoutes
